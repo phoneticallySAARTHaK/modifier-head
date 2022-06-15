@@ -1,23 +1,53 @@
-import logo from './logo.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button } from 'reactstrap'
-import { Modal, ModalBody, ModalHeader } from 'reactstrap'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionBody,
+} from 'reactstrap'
 import { useState } from 'react'
 
 function App() {
-  const [open, setOpen] = useState(false)
-
+  const [open, setOpen] = useState('')
+  const toggle = (id) => {
+    open === id ? setOpen('') : setOpen(id)
+  }
   return (
-    <>
-      <Modal isOpen={open} toggle={() => setOpen((prevOpen) => !prevOpen)}>
-        <ModalHeader>Modal title</ModalHeader>
-        <ModalBody>Modal body text goes here.</ModalBody>
-      </Modal>
-      <Button color="danger" onClick={setOpen}>
-        Danger!
-      </Button>
-    </>
+    <div>
+      <Accordion open={open} toggle={toggle}>
+        <AccordionItem>
+          <AccordionHeader targetId="1">Accordion Item 1</AccordionHeader>
+          <AccordionBody accordionId="1">
+            <strong>This is the first item's accordion body.</strong>
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </AccordionBody>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionHeader targetId="2">Accordion Item 2</AccordionHeader>
+          <AccordionBody accordionId="2">
+            <strong>This is the second item's accordion body.</strong>
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </AccordionBody>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionHeader targetId="3">Accordion Item 3</AccordionHeader>
+          <AccordionBody accordionId="3">
+            <strong>This is the third item's accordion body.</strong>
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the <code>.accordion-body</code>, though the transition does
+            limit overflow.
+          </AccordionBody>
+        </AccordionItem>
+      </Accordion>
+    </div>
   )
 }
 
