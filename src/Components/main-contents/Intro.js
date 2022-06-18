@@ -11,7 +11,8 @@ function Intro(props) {
   return (
     <Container className="intro col text-center">
       <h1 className="display-1">URL modifier</h1>
-      <p className="lead">Create Custom URLs & Embeds</p>
+      <p className="lead">The next-gen URL shortner</p>
+      <p className="text-muted">Create Custom URLs & Embeds</p>
       <InputGroup>
         <InputGroupText>
           <i className="bi bi-link-45deg"></i>

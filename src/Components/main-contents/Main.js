@@ -1,4 +1,3 @@
-import { Container, Row, Col } from 'reactstrap'
 import Example from './Example'
 import Intro from './Intro'
 import Uses from './Uses'
