@@ -1,7 +1,7 @@
 import Example from './Example'
 import Intro from './Intro'
-import Uses from './Uses'
-
+import ExtraInfo from '../ExtraInfo'
+import { Col, Container, Row } from 'reactstrap'
 // TODO
 function Main(props) {
   return (
@@ -10,8 +10,16 @@ function Main(props) {
         <Intro />
       </section>
       <section>
-        <Example />
-        <Uses />
+        <Container>
+          <Row>
+            <Col className="col col-lg-8">
+              <Example />
+            </Col>
+            <Col>
+              <ExtraInfo className="mt-5" />
+            </Col>
+          </Row>
+        </Container>
       </section>
     </main>
   )

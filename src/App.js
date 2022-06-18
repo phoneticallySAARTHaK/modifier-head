@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Header from './Components/Header'
 import Main from './Components/main-contents/Main'
-import Footer from './Components/Footer'
 
 function App() {
   return (
@@ -13,9 +12,6 @@ function App() {
 
       {/* Main */}
       <Main></Main>
-
-      {/* Footer */}
-      <Footer></Footer>
     </>
   )
 }
