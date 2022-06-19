@@ -1,4 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { useState, useRef } from 'react'
 import {
   Container,
   Input,
@@ -7,27 +8,46 @@ import {
   Button,
   Row,
   Col,
+  Form,
 } from 'reactstrap'
+import ModForm from './ModForm'
 
 function Intro(props) {
+  const [isVisible, setVisible] = useState(false)
+  const toggle = () => setVisible(true)
+
+  const urlRef = useRef(null)
+
   return (
-    <Container className="intro col text-center">
+    <Container className="intro col col-md-6 col-lg-4 text-center">
       <h1 className="display-1">URL modifier</h1>
       <p className="lead">The Next-Gen URL Shortner</p>
       <p className="text-muted">Create Custom URLs & Embeds</p>
       <Row>
-        <Col>
-          <InputGroup>
-            <InputGroupText>
-              <i className="bi bi-link-45deg"></i>
-            </InputGroupText>
-            <Input id="intro" placeholder="Enter a link to modify" />
-            <Button>Modify</Button>
-          </InputGroup>
+        <Col className="input-form text-start">
+          <Form
+            action={'http://localhost:3000/u/um/' + urlRef.value}
+            method="post"
+          >
+            <InputGroup>
+              <InputGroupText>
+                <i className="bi bi-link-45deg"></i>
+              </InputGroupText>
+              <Input
+                required
+                id="intro"
+                name="redirect_url"
+                placeholder="Enter a link to modify"
+                ref={urlRef}
+              />
+              {isVisible ? null : <Button onClick={toggle}>Next</Button>}
+            </InputGroup>
+            {isVisible ? <ModForm /> : null}
+          </Form>
         </Col>
       </Row>
       <Row>
-        <Col className="text-start">
+        <Col className="text-start my-3">
           <p>
             URL modifer lets you create a custom URL for any link, AND let you
             add the metadata that is shown in the embeds.

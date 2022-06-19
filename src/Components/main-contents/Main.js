@@ -11,12 +11,12 @@ function Main(props) {
       </section>
       <section>
         <Container>
-          <Row>
+          <Row className="gy-2">
             <Col className="col col-lg-8">
               <Example />
             </Col>
             <Col>
-              <ExtraInfo className="mt-5" />
+              <ExtraInfo />
             </Col>
           </Row>
         </Container>

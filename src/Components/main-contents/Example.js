@@ -12,13 +12,14 @@ function Example(props) {
             <a href="#">seggs</a> embed:
           </p>
           <Slideshow />
-          <p>
-            Here's the where URL actually redirects you:
+          <p className="m-2">Here's where the URL actually redirects you:</p>
+          <div className="text-center">
             <img
+              className="img-fluid pb-lg-4"
               src="https://picsum.photos/id/123/500/300"
               alt="a screenshot of the mentioned webpage"
             />
-          </p>
+          </div>
         </Col>
       </Row>
     </Container>
