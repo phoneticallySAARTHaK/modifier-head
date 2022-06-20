@@ -1,5 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import {
   Container,
   Input,
@@ -14,9 +14,9 @@ import ModForm from './ModForm'
 
 function Intro(props) {
   const [isVisible, setVisible] = useState(false)
-  const toggle = () => setVisible(true)
-
-  const urlRef = useRef(null)
+  const toggle = () => {
+    setVisible(true)
+  }
 
   return (
     <Container className="intro col col-md-6 col-lg-4 text-center">
@@ -25,10 +25,7 @@ function Intro(props) {
       <p className="text-muted">Create Custom URLs & Embeds</p>
       <Row>
         <Col className="input-form text-start">
-          <Form
-            action={'http://localhost:3000/u/um/' + urlRef.value}
-            method="post"
-          >
+          <Form action="https://urlmod.herokuapp.com/u/um/m/" method="post">
             <InputGroup>
               <InputGroupText>
                 <i className="bi bi-link-45deg"></i>
@@ -38,7 +35,6 @@ function Intro(props) {
                 id="intro"
                 name="redirect_url"
                 placeholder="Enter a link to modify"
-                ref={urlRef}
               />
               {isVisible ? null : <Button onClick={toggle}>Next</Button>}
             </InputGroup>
@@ -54,7 +50,7 @@ function Intro(props) {
           </p>
           <p>
             This is works much like a URL shortner, but it's generalized and
-            it's almost as if you've made a whole new webiste!
+            it's almost as if you've made a whole new website!
           </p>
         </Col>
       </Row>

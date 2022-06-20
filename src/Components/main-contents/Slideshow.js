@@ -28,26 +28,8 @@ const items = [
   },
 ]
 
-const Slideshow = (args) => {
-  const [activeIndex, setActiveIndex] = useState(0)
+const Slideshow = (props) => {
   const [animating, setAnimating] = useState(false)
-
-  const next = () => {
-    if (animating) return
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1
-    setActiveIndex(nextIndex)
-  }
-
-  const previous = () => {
-    if (animating) return
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1
-    setActiveIndex(nextIndex)
-  }
-
-  const goToIndex = (newIndex) => {
-    if (animating) return
-    setActiveIndex(newIndex)
-  }
 
   const slides = items.map((item) => {
     return (
@@ -67,28 +49,28 @@ const Slideshow = (args) => {
 
   return (
     <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      dark={true}
+      activeIndex={props.activeIndex}
+      next={() => props.next(animating)}
+      previous={() => props.previous(animating)}
+      dark={false}
       slide={true}
-      className="text-center"
+      className="text-center bg-dark"
     >
       <CarouselIndicators
         items={items}
-        activeIndex={activeIndex}
-        onClickHandler={goToIndex}
+        activeIndex={props.activeIndex}
+        onClickHandler={(newIndex) => props.goToIndex(animating, newIndex)}
       />
       {slides}
       <CarouselControl
         direction="prev"
         directionText="Previous"
-        onClickHandler={previous}
+        onClickHandler={() => props.previous(animating)}
       />
       <CarouselControl
         direction="next"
         directionText="Next"
-        onClickHandler={next}
+        onClickHandler={() => props.next(animating)}
       />
     </Carousel>
   )

@@ -1,25 +1,45 @@
+import { useState } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import Slideshow from './Slideshow'
 
-function Example(props) {
+function Example() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const ITEMS = 3
+  const next = (animating) => {
+    if (animating) return
+    const nextIndex = activeIndex === ITEMS - 1 ? 0 : activeIndex + 1
+    setActiveIndex(nextIndex)
+  }
+
+  const previous = (animating) => {
+    if (animating) return
+    const nextIndex = activeIndex === 0 ? ITEMS - 1 : activeIndex - 1
+    setActiveIndex(nextIndex)
+  }
+
+  const goToIndex = (animating, newIndex) => {
+    if (animating) return
+    setActiveIndex(newIndex)
+  }
+
+  const props = {
+    activeIndex,
+    next,
+    previous,
+    goToIndex,
+  }
+
   return (
     <Container>
-      <h2 className="h2">Example</h2>
+      <h2 className="h2">Demonstration</h2>
       <Row>
-        <Col>
-          <p>
-            Screenshots of various social media platforms showing{' '}
-            <a href="#">seggs</a> embed:
-          </p>
-          <Slideshow />
-          <p className="m-2">Here's where the URL actually redirects you:</p>
-          <div className="text-center">
-            <img
-              className="img-fluid pb-lg-4"
-              src="https://picsum.photos/id/123/500/300"
-              alt="a screenshot of the mentioned webpage"
-            />
-          </div>
+        <Col className="col col-md-6 text-center">
+          <h3>Modifiied URL</h3>
+          <Slideshow {...props} />
+        </Col>
+        <Col className="col col-md-6 text-center">
+          <h3>Original URL</h3>
+          <Slideshow {...props} />
         </Col>
       </Row>
     </Container>
