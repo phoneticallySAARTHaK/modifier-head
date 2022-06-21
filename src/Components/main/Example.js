@@ -51,7 +51,7 @@ const MdItems = [
 ]
 
 function Example() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(1)
   const ITEMS = 3
   const next = (animating) => {
     if (animating) return
