@@ -37,15 +37,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.item {
-  position: static;
-}
-
-.caption {
-  bottom: 0;
 }
 
 textarea {

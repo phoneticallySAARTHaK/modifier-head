@@ -26,34 +26,38 @@ const Slideshow = (props) => {
 
   return (
     <>
-      <Carousel
-        activeIndex={props.activeIndex}
-        next={() => props.next(animating)}
-        previous={() => props.previous(animating)}
-        dark={false}
-        slide={true}
-        className="text-center bg-dark slide text-primary"
-      >
-        <CarouselIndicators
-          items={props.items}
+      <div>
+        <Carousel
           activeIndex={props.activeIndex}
-          onClickHandler={(newIndex) => props.goToIndex(animating, newIndex)}
-        />
-        {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={() => props.previous(animating)}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={() => props.next(animating)}
-        />
-      </Carousel>
-      <span className="my-2 p-2 text-white lead bg-secondary rounded-1 d-inline-block">
-        {props.items[props.activeIndex].caption}
-      </span>
+          next={() => props.next(animating)}
+          previous={() => props.previous(animating)}
+          dark={true}
+          slide={true}
+          className="text-center bg-light slide text-primary"
+        >
+          <CarouselIndicators
+            items={props.items}
+            activeIndex={props.activeIndex}
+            onClickHandler={(newIndex) => props.goToIndex(animating, newIndex)}
+          />
+          {slides}
+          <CarouselControl
+            direction="prev"
+            directionText="Previous"
+            onClickHandler={() => props.previous(animating)}
+          />
+          <CarouselControl
+            direction="next"
+            directionText="Next"
+            onClickHandler={() => props.next(animating)}
+          />
+        </Carousel>
+      </div>
+      <div>
+        <span className="my-2 p-2 text-white lead bg-secondary rounded-1 d-inline-block">
+          {props.items[props.activeIndex].caption}
+        </span>
+      </div>
     </>
   )
 }
