@@ -25,8 +25,15 @@ const Slideshow = (props) => {
   })
 
   return (
-    <>
-      <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%',
+      }}
+    >
+      <div style={{ flex: '1' }}>
         <Carousel
           activeIndex={props.activeIndex}
           next={() => props.next(animating)}
@@ -53,12 +60,12 @@ const Slideshow = (props) => {
           />
         </Carousel>
       </div>
-      <div>
+      <div style={{ justifySelf: 'end' }}>
         <span className="my-2 p-2 text-white lead bg-secondary rounded-1 d-inline-block">
           {props.items[props.activeIndex].caption}
         </span>
       </div>
-    </>
+    </div>
   )
 }
 

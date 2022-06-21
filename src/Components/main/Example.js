@@ -81,12 +81,12 @@ function Example() {
     <>
       <h2 className="h2 mb-3">Demonstration</h2>
       <Row>
-        <Col className="col-12 col-md-6">
-          <h4 className="mt-1">Modified URL</h4>
+        <Col className="col-12 col-md-6 gy-3 gy-md-1">
+          <h4>Modified URL</h4>
           <Slideshow items={MdItems} {...props} />
         </Col>
-        <Col className="col-12 col-md-6">
-          <h4 className="mt-3 mt-md-1">Original URL</h4>
+        <Col className="col-12 col-md-6 gy-5 gy-md-1">
+          <h4>Original URL</h4>
           <Slideshow items={OgItems} {...props} />
         </Col>
       </Row>
