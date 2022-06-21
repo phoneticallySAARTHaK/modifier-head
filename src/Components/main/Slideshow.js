@@ -38,9 +38,9 @@ const Slideshow = (props) => {
           activeIndex={props.activeIndex}
           next={() => props.next(animating)}
           previous={() => props.previous(animating)}
-          dark={true}
+          dark={false}
           slide={true}
-          className="text-center bg-light slide text-primary"
+          className="text-center bg-dark slide text-primary"
         >
           <CarouselIndicators
             items={props.items}

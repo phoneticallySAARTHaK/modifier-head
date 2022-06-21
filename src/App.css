@@ -42,3 +42,9 @@ img {
 textarea {
   resize: none;
 }
+
+@media screen and (max-width: 576px) {
+  .offcanvas {
+    width: 70vw;
+  }
+}
