@@ -19,8 +19,8 @@ function Intro(props) {
   }
 
   return (
-    <Container className="intro col col-md-6 col-lg-4 text-center">
-      <h1 className="display-1">URL modifier</h1>
+    <Container className="text-center my-3 intro">
+      <h1 className="display-2">URL modifier</h1>
       <p className="lead">The Next-Gen URL Shortner</p>
       <p className="text-muted">Create Custom URLs & Embeds</p>
       <Row>
@@ -43,7 +43,7 @@ function Intro(props) {
         </Col>
       </Row>
       <Row>
-        <Col className="text-start my-3">
+        <Col style={{ textAlign: 'justify' }} className="my-3">
           <p>
             URL modifer lets you create a custom URL for any link, AND let you
             add the metadata that is shown in the embeds.

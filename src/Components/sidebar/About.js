@@ -1,18 +1,7 @@
 function About(props) {
   return (
-    <>
-      <h2>About</h2>
-
-      <p>
-        <strong>Some random quote for no reason:</strong>
-      </p>
-      <blockquote className="blockquote">
-        Most of the good programmers do programming not because they expect to
-        get paid or get adulation by the public, but because it is fun to
-        program. <br />- Linus Torvalds
-      </blockquote>
-
-      <h3>Contributors</h3>
+    <div>
+      <h2>Contributors</h2>
 
       <p>
         <a href="https://github.com/hxyro">
@@ -31,7 +20,7 @@ function About(props) {
           />
         </a>
       </p>
-    </>
+    </div>
   )
 }
 
