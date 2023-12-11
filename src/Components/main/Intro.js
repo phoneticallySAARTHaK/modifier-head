@@ -25,7 +25,10 @@ function Intro(props) {
       <p className="text-muted">Create Custom URLs & Embeds</p>
       <Row>
         <Col className="input-form text-start">
-          <Form action="http://localhost:3001/u/um/m/" method="post">
+          <Form
+            action={process.env.REACT_APP_BACKEND_URL + '/u/um/m/'}
+            method="post"
+          >
             <InputGroup>
               <InputGroupText>
                 <i className="bi bi-link-45deg"></i>
@@ -33,6 +36,7 @@ function Intro(props) {
               <Input
                 required
                 id="intro"
+                type="url"
                 name="redirect_url"
                 placeholder="Enter a link to modify"
               />
