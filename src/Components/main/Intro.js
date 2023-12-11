@@ -25,7 +25,7 @@ function Intro(props) {
       <p className="text-muted">Create Custom URLs & Embeds</p>
       <Row>
         <Col className="input-form text-start">
-          <Form action="https://urlmod.herokuapp.com/u/um/m/" method="post">
+          <Form action="http://localhost:3001/u/um/m/" method="post">
             <InputGroup>
               <InputGroupText>
                 <i className="bi bi-link-45deg"></i>

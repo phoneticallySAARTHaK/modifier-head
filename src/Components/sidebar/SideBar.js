@@ -11,7 +11,7 @@ const SideBar = (args) => {
   return (
     <div className="my-navbar d-lg-none btn-lg">
       <a className="btn btn-primary" href="#">
-        <i class="bi bi-chevron-bar-up "></i>
+        <i className="bi bi-chevron-bar-up "></i>
       </a>
 
       <Button
